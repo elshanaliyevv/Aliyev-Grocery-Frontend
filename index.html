@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AliyevGrocery - Online baqqal dükanı. Qeydiyyatdan keçin və ya daxil olun.">
+    <title>AliyevGrocery - Daxil ol</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="auth-wrapper">
+    <div class="auth-card">
+
+                <div class="auth-logo">
+            <span style="font-size: 48px;">🛒</span>
+            <h1>AliyevGrocery</h1>
+            <p>Online baqqal dükanı</p>
+        </div>
+
+                <div id="auth-alert" class="alert"></div>
+
+                <div class="tabs">
+            <button class="tab-btn active" id="login-tab-btn" onclick="switchTab('login')">Daxil ol</button>
+            <button class="tab-btn" id="register-tab-btn" onclick="switchTab('register')">Qeydiyyat</button>
+        </div>
+
+                <div class="tab-content active" id="login-tab">
+            <form id="login-form" onsubmit="handleLogin(event)">
+                <div class="form-group">
+                    <label class="form-label" for="login-identifier">İstifadəçi adı, email və ya telefon</label>
+                    <input class="form-input" type="text" id="login-identifier" 
+                           placeholder="user123 / user@mail.com / +994..." required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="login-password">Şifrə</label>
+                    <input class="form-input" type="password" id="login-password" 
+                           placeholder="Şifrənizi daxil edin" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-full" id="login-btn">Daxil ol</button>
+            </form>
+        </div>
+
+                <div class="tab-content" id="register-tab">
+            <form id="register-form" onsubmit="handleRegister(event)">
+                <div class="form-group">
+                    <label class="form-label" for="reg-username">İstifadəçi adı</label>
+                    <input class="form-input" type="text" id="reg-username" 
+                           placeholder="minimum 3 simvol" required minlength="3" maxlength="15">
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="reg-password">Şifrə</label>
+                    <input class="form-input" type="password" id="reg-password" 
+                           placeholder="minimum 8 simvol" required minlength="8">
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="reg-email">Email</label>
+                    <input class="form-input" type="email" id="reg-email" 
+                           placeholder="user@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="reg-number">Telefon nömrəsi</label>
+                    <input class="form-input" type="text" id="reg-number" 
+                           placeholder="+994501234567" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-full" id="register-btn">Qeydiyyatdan keç</button>
+            </form>
+        </div>
+
+    </div>
+</div>
+</body>
+</html>
