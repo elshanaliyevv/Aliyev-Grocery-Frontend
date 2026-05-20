@@ -21,12 +21,12 @@
                 <div id="auth-alert" class="alert"></div>
 
                 <div class="tabs">
-            <button class="tab-btn active" id="login-tab-btn" onclick="switchTab('login')">Daxil ol</button>
-            <button class="tab-btn" id="register-tab-btn" onclick="switchTab('register')">Qeydiyyat</button>
+            <button class="tab-btn active" id="login-tab-btn">Daxil ol</button>
+            <button class="tab-btn" id="register-tab-btn">Qeydiyyat</button>
         </div>
 
                 <div class="tab-content active" id="login-tab">
-            <form id="login-form" onsubmit="handleLogin(event)">
+            <form id="login-form">
                 <div class="form-group">
                     <label class="form-label" for="login-identifier">İstifadəçi adı, email və ya telefon</label>
                     <input class="form-input" type="text" id="login-identifier" 
@@ -42,7 +42,7 @@
         </div>
 
                 <div class="tab-content" id="register-tab">
-            <form id="register-form" onsubmit="handleRegister(event)">
+            <form id="register-form">
                 <div class="form-group">
                     <label class="form-label" for="reg-username">İstifadəçi adı</label>
                     <input class="form-input" type="text" id="reg-username" 
@@ -69,7 +69,9 @@
 
     </div>
 </div>
+
 <script src="js/api.js"></script>
 <script src="js/auth.js"></script>
+
 </body>
 </html>

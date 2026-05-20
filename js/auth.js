@@ -2,7 +2,10 @@
    AUTH.JS - Login ve Register emeliyyatlari
    ============================== */
 
-
+// Sehife yuklenende: eger artiq login olubsa, products sehifesine yonlendir
+if (isLoggedIn()) {
+    window.location.href = "products.html";
+}
 
 // ---- TAB KECIDI ----
 
@@ -99,3 +102,8 @@ function handleRegister(event) {
         btn.textContent = "Qeydiyyatdan keç";
     });
 }
+
+document.getElementById('login-tab-btn').addEventListener('click', function() { switchTab('login'); });
+document.getElementById('register-tab-btn').addEventListener('click', function() { switchTab('register'); });
+document.getElementById('login-form').addEventListener('submit', handleLogin);
+document.getElementById('register-form').addEventListener('submit', handleRegister);
