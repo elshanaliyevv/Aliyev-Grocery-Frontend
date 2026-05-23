@@ -248,11 +248,6 @@ a:hover {
     border: 3px solid var(--gray-200);
     border-top-color: var(--green-mid);
     border-radius: 50%;
-    animation: spin 0.8s linear infinite;
-}
-
-@keyframes spin {
-    to { transform: rotate(360deg); }
 }
 
 .auth-wrapper {
@@ -442,6 +437,189 @@ select.form-input {
     border: 1px solid rgba(45, 106, 79, 0.2);
 }
 
+.card {
+    background: var(--white);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 24px;
+    margin-bottom: 20px;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--gray-100);
+    gap: 16px;
+}
+
+.cart-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.cart-item:first-child {
+    padding-top: 0;
+}
+
+.cart-item-info {
+    flex: 1;
+}
+
+.cart-item-name {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--gray-900);
+    margin-bottom: 4px;
+}
+
+.cart-item-price {
+    font-size: 14px;
+    color: var(--gray-500);
+}
+
+.cart-item-right {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    border: 2px solid var(--gray-200);
+    border-radius: var(--radius-sm);
+    background: var(--white);
+    overflow: hidden;
+}
+
+.quantity-btn {
+    background: none;
+    border: none;
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--gray-700);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+}
+
+.quantity-btn:hover {
+    background: var(--gray-100);
+}
+
+.quantity-num {
+    padding: 0 4px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--gray-900);
+    min-width: 24px;
+    text-align: center;
+}
+
+.cart-item-subtotal {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--green-dark);
+    min-width: 80px;
+    text-align: right;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 48px 24px;
+    background: var(--white);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.empty-state-icon {
+    font-size: 48px;
+    margin-bottom: 16px;
+}
+
+.empty-state-text {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--gray-900);
+    margin-bottom: 4px;
+}
+
+.empty-state-sub {
+    font-size: 14px;
+    color: var(--gray-500);
+    margin-bottom: 20px;
+}
+
+.cart-summary {
+    background: var(--white);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.cart-total-label {
+    font-size: 14px;
+    color: var(--gray-500);
+    font-weight: 500;
+}
+
+.cart-total-price {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--green-dark);
+}
+
+.addr-modal-box {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 32px;
+    width: 100%;
+    max-width: 480px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    position: relative;
+    margin: 20px;
+}
+
+.addr-modal-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--green-dark);
+    margin-bottom: 8px;
+}
+
+.addr-modal-sub {
+    font-size: 14px;
+    color: var(--gray-500);
+    margin-bottom: 20px;
+}
+
+.addr-modal-card {
+    background: var(--gray-50);
+    border: 2px solid var(--gray-200);
+    border-radius: var(--radius-sm);
+    padding: 16px;
+    margin-bottom: 20px;
+    font-size: 15px;
+    color: var(--gray-900);
+}
+
+.addr-modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+}
+
 @media (max-width: 768px) {
     .grid-3 {
         grid-template-columns: repeat(2, 1fr);
@@ -454,6 +632,29 @@ select.form-input {
     .container {
         padding: 20px 16px;
     }
+    
+    .cart-summary {
+        flex-direction: column;
+        align-items: stretch;
+        text-align: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .cart-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+    
+    .cart-item-right {
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+    .cart-item-subtotal {
+        text-align: right;
+    }
 }
 
 @media (max-width: 480px) {
@@ -463,5 +664,17 @@ select.form-input {
 
     .auth-card {
         padding: 24px;
+    }
+    
+    .addr-modal-box {
+        padding: 20px;
+    }
+    
+    .addr-modal-actions {
+        flex-direction: column-reverse;
+    }
+    
+    .addr-modal-actions .btn {
+        width: 100%;
     }
 }

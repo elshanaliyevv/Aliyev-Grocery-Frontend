@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AliyevGrocery - Səbət. Seçdiyiniz məhsulları idarə edin və sifariş verin.">
+    <title>AliyevGrocery - Səbət</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <a href="products.html" class="navbar-brand">
+        <span>🛒</span> AliyevGrocery
+    </a>
+    <ul class="navbar-links">
+        <li><a href="products.html">Məhsullar</a></li>
+        <li><a href="cart.html" class="active">Səbət</a></li>
+        <li><a href="orders.html">Sifarişlərim</a></li>
+        <li><a href="profile.html">Profil</a></li>
+        <li id="nav-admin-link"><a href="admin.html">Admin</a></li>
+    </ul>
+    <div class="navbar-right">
+        <span id="navbar-user" style="color: rgba(255,255,255,0.7); font-size: 14px;"></span>
+        <button class="btn btn-sm btn-secondary" id="logout-btn">Çıxış</button>
+    </div>
+</nav>
+
+<div class="container">
+    <h1 class="page-title">🛒 Səbət</h1>
+
+        <div id="cart-alert" class="alert"></div>
+
+        <div id="cart-loading" class="loading">
+        <div class="loading-spinner"></div>
+        <p>Yüklənir...</p>
+    </div>
+
+        <div id="cart-content" style="display: none;">
+                <div id="cart-empty" class="empty-state" style="display: none;">
+            <div class="empty-state-icon">🛒</div>
+            <div class="empty-state-text">Səbət boşdur</div>
+            <div class="empty-state-sub">Məhsullar səhifəsindən məhsul əlavə edin</div>
+            <a href="products.html" class="btn btn-primary">Məhsullara bax</a>
+        </div>
+
+                <div id="cart-items-wrapper" style="display: none;">
+            <div class="card">
+                <div id="cart-items">
+                                    </div>
+            </div>
+
+                        <div class="cart-summary">
+                <div>
+                    <div class="cart-total-label">Ümumi məbləğ</div>
+                    <div class="cart-total-price" id="cart-total">₼0.00</div>
+                </div>
+                <button class="btn btn-primary" id="order-btn">
+                    ✓ Sifariş ver
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="address-modal-overlay" style="display:none; position:fixed; inset:0;
+     background:rgba(0,0,0,0.55); z-index:1000; align-items:center; justify-content:center;
+     backdrop-filter:blur(3px);">
+    <div class="addr-modal-box">
+        <div class="addr-modal-title">📍 Çatdırılma ünvanı</div>
+        <p class="addr-modal-sub">Aşağıdakı ünvana çatdırılacaq. Təsdiqləyirsiniz?</p>
+
+                <div id="addr-modal-loading" style="text-align:center; padding:24px 0;">
+            <div class="loading-spinner"></div>
+        </div>
+
+                <div id="addr-modal-empty" style="display:none; text-align:center; padding:16px 0;">
+            <div style="font-size:40px; margin-bottom:10px;">🏠</div>
+            <p style="color:var(--gray-500); margin:0 0 16px; font-size:14px;">Profildə ünvan qeyd edilməyib.</p>
+            <a href="profile.html" class="btn btn-primary btn-sm">+ Ünvan əlavə et</a>
+        </div>
+
+                <div id="addr-modal-card" class="addr-modal-card" style="display:none;">
+                    </div>
+
+                <div id="addr-modal-alert" class="alert" style="margin-bottom:12px;"></div>
+
+                <div id="addr-modal-actions" class="addr-modal-actions" style="display:none;">
+            <button class="btn btn-secondary" id="cancel-address-btn">Ləğv et</button>
+            <button class="btn btn-primary" id="confirm-order-btn">
+                ✓ Sifarişi təsdiqlə
+            </button>
+        </div>
+    </div>
+</div>
+
+<script src="js/api.js"></script>
+<script src="js/cart.js"></script>
+
+</body>
+</html>
