@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AliyevGrocery - Sifarişlərim. Sifariş tarixçənizi izləyin.">
+    <title>AliyevGrocery - Sifarişlərim</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <a href="products.html" class="navbar-brand">
+        <span>🛒</span> AliyevGrocery
+    </a>
+    <ul class="navbar-links">
+        <li><a href="products.html">Məhsullar</a></li>
+        <li><a href="cart.html">Səbət</a></li>
+        <li><a href="orders.html" class="active">Sifarişlərim</a></li>
+        <li><a href="profile.html">Profil</a></li>
+        <li id="nav-admin-link"><a href="admin.html">Admin</a></li>
+    </ul>
+    <div class="navbar-right">
+        <span id="navbar-user" style="color: rgba(255,255,255,0.7); font-size: 14px;"></span>
+        <button class="btn btn-sm btn-secondary" id="logout-btn">Çıxış</button>
+    </div>
+</nav>
+
+<div class="container">
+    <h1 class="page-title">📦 Sifarişlərim</h1>
+
+        <div id="orders-alert" class="alert"></div>
+
+        <div id="orders-loading" class="loading">
+        <div class="loading-spinner"></div>
+        <p>Yüklənir...</p>
+    </div>
+
+        <div id="orders-content" style="display: none;">
+                <div id="orders-empty" class="empty-state" style="display: none;">
+            <div class="empty-state-icon">📦</div>
+            <div class="empty-state-text">Heç bir sifarişiniz yoxdur</div>
+            <div class="empty-state-sub">Məhsullar səhifəsindən sifariş verə bilərsiniz</div>
+            <a href="products.html" class="btn btn-primary">Məhsullara bax</a>
+        </div>
+
+                <div id="orders-list">
+                    </div>
+    </div>
+</div>
+
+<script src="js/api.js"></script>
+<script src="js/orders.js"></script>
+
+</body>
+</html>
